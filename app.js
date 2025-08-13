@@ -21,13 +21,14 @@ const searchRouter = require("./routes/search.js");
 const session = require("express-session");
 const MongoStore = require("connect-mongo");
 const flash = require("connect-flash");
-
+const passport = require("passport");
+const LocalStrategy = require("passport-local");
 const User = require("./models/user.js");
 
 app.use(methodoverride("_method"));
 
 app.set("views", path.join(__dirname, "views"));
-app.set("viewengine", "ejs");
+app.set("view engine", "ejs");
 
 app.use(express.urlencoded({ extended: true }));
 app.engine("ejs", ejsMate);
@@ -42,7 +43,6 @@ const store = MongoStore.create({
 });
 
 const sessionOption = {
-  store,
   secret: "mysupersecrtecode",
   resave: false,
   saveUninitialized: true,
@@ -59,6 +59,12 @@ store.on("error", () => {
 
 app.use(session(sessionOption));
 app.use(flash());
+app.use(passport.initialize());
+app.use(passport.session());
+
+passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
 app.use((req, res, next) => {
   res.locals.success = req.flash("success");
