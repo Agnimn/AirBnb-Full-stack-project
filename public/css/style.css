@@ -16,6 +16,7 @@ body {
 }
 .nav-link {
   font-size: #222222 !important;
+  padding: 20px !important;
 }
 
 /* footer */
@@ -236,4 +237,11 @@ p {
   .search-container {
     display: none;
   }
+}
+
+.name a {
+  text-decoration: none;
+  font-size: 25px;
+  font-weight: 500;
+  font-family: cursive;
 }
