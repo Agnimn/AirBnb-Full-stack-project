@@ -1,6 +1,6 @@
 # AirBnb-Full-stack-project
 
-🏡 Staya – List Your Villa. Welcome the World.
+# 🏡 Staya – List Your Villa. Welcome the World.
 
 Staya is a modern full-stack vacation rental platform inspired by Airbnb — but with a focus on property owners.
 It allows users to list their own villas, upload images, set pricing, and make them available for booking by travelers.
