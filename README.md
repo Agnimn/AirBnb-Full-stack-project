@@ -23,19 +23,9 @@ For Hosts 🏠
 
 🖼️ Upload property images (Cloudinary integration)
 
-📅 Set pricing and availability dates
-
-📊 View and manage booking requests
-
 For Guests 🌍
 
 🔍 Search and filter villas by location, price, and features
-
-📆 Book stays with an interactive date picker
-
-📩 Get instant email confirmation with PDF booking ticket
-
-👤 Manage bookings in a personal dashboard
 
 # 🔧 Tech Stack
 
@@ -46,8 +36,6 @@ Frontend: EJS Templates, Bootstrap/CSS
 Authentication: Passport.js (Google & Local Strategy)
 
 File Storage: Cloudinary
-
-Email Service: Nodemailer
 
 # 🚀 Project Goal
 
