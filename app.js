@@ -88,6 +88,9 @@ main()
 async function main() {
   await mongoose.connect(dbUrl);
 }
+app.get("/", (req, res) => {
+  res.redirect("/listings");
+});
 
 app.all("*", (req, res, next) => {
   next(new ExpressError(404, "Page not Found"));
