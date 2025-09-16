@@ -88,9 +88,6 @@ main()
 async function main() {
   await mongoose.connect(dbUrl);
 }
-app.get("/", async (req, res) => {
-  res.render("index.ejs");
-});
 
 app.all("*", (req, res, next) => {
   next(new ExpressError(404, "Page not Found"));
@@ -103,8 +100,6 @@ app.use((err, req, res, next) => {
   next();
 });
 
-const port = process.env.PORT || 3003;
-
-app.listen(port, () => {
-  console.log(`Server started on port ${port}`);
+app.listen(3003, (req, res) => {
+  console.log("server started on port 3003");
 });
